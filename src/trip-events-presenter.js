@@ -231,9 +231,9 @@ export default class TripEventsListPresenter {
         break;
       case UpdateType.MINOR:
         this.#filterPoints();
-        this.tripInfoPresenter.init(this.points, this.offers, this.destinations);
+        this.tripInfoPresenter.init(this.#filteredPoints, this.offers, this.destinations);
         this.#clearPointsList();
-        this.#renderPoints(this.#sortedPoints);
+        this.#renderPoints(this.#filteredPoints);
         this.showMessage();
         break;
       case UpdateType.MAJOR:
