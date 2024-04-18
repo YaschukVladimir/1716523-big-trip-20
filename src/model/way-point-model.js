@@ -19,7 +19,14 @@ export default class PointsModel extends Observable{
       const offers = await this.#pointsApiService.offers;
       this.#offers = offers;
       const destinations = await this.#pointsApiService.destinations;
-      this.#destinations = destinations;
+      const preparedDestinations = [];
+      destinations.map((dest) => {
+        dest.pictures.forEach((picture) => {
+          picture.src = picture.src.replace('pages.academy', 'htmlacademy.pro');
+        });
+        preparedDestinations.push(dest);
+      });
+      this.#destinations = preparedDestinations;
     } catch(err) {
       this.#points = [];
       this.#offers = [];

@@ -13,7 +13,8 @@ import PointsApiService from './points-api-service.js';
 
 
 const AUTHORIZATION = 'Basic kr321B66vrW3Zi5s';
-const END_POINT = 'https://20.ecmascript.pages.academy/big-trip';
+// const END_POINT = 'https://20.ecmascript.pages.academy/big-trip';
+const END_POINT = 'https://20.ecmascript.htmlacademy.pro/big-trip';
 
 const siteMainElement = document.querySelector('.page-main');
 const tripEventsElement = siteMainElement.querySelector('.trip-events');
